@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'm Sorry Amore Mio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #ffccda;
+        }
+        .container {
+            text-align: center;
+        }
+        .heart {
+            position: relative;
+            width: 100px;
+            height: 90px;
+            margin: 50px auto;
+        }
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 52px;
+            height: 80px;
+            background: red;
+            border-radius: 50px 50px 0 0;
+        }
+        .heart::before {
+            left: 50px;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+        }
+        .heart::after {
+            left: 0;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #ff4081;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            position: relative;
+            z-index: 1;
+        }
+        #gif-container, #letter-container {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100vh;
+        }
+        #gif-container {
+            background-color: #ffccda;
+        }
+        #letter-container {
+            background: url('A%20little%20bit%20of%20us_20250320_182646_0000.png') no-repeat center center;
+            background-size: cover;
+            color: black;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .letter-box {
+            background-color: rgba(128, 128, 128, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="start-container" class="container">
+        <div class="heart"></div>
+        <button onclick="showGifPage()">OPEN ME</button>
+    </div>
+
+    <div id="gif-container">
+        <img src="im-sorry-milk-and-mocha-bear.gif" alt="I'm Sorry GIF">
+        <button onclick="showLetterPage()">MORE</button>
+    </div>
+
+    <div id="letter-container">
+        <div class="letter-box">
+            <p>Amore mio,</p>
+            <p>Sorry kung nasaktan kita by falling asleep. Alam kong nagkulang ako lately to give attention and to make you feel special, please be patient with me, I know na madalang akong magkamali but I'll work on it.</p>
+            <p>Mahalaga ka sa akin, you are very important to me and you know that. Hopefully this thing I created will make you feel a little bit better.</p>
+            <p>I'm sorry, amore mio. Mahal na mahal kita❤️❤️❤️.</p>
+            <p>P.S. Forgive my English for not being perfect<br>And forgive me too for not being the best boyfriend</p>
+            <p>I LOVE YOU ❤️❤️</p>
+        </div>
+    </div>
+
+    <script>
+        function showGifPage() {
+            document.getElementById("start-container").style.display = "none";
+            document.getElementById("gif-container").style.display = "flex";
+        }
+        function showLetterPage() {
+            document.getElementById("gif-container").style.display = "none";
+            document.getElementById("letter-container").style.display = "flex";
+        }
+    </script>
+</body>
+</html>
